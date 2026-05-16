@@ -14,47 +14,47 @@ const router = createRouter({
     {
       path: '/',
       component: HomepageIndex,
-      name:'homepage-index',
+      name: 'homepage-index',
     },
     {
       path: '/friend/',
       component: FriendIndex,
-      name:'friend-index',
+      name: 'friend-index',
     },
     {
       path: '/create/',
       component: CreateIndex,
-      name:'create-index',
+      name: 'create-index',
     },
     {
       path: '/404/',
       component: NotFoundIndex,
-      name:'404',
+      name: '404',
     },
     {
       path: '/user/account/login/',
       component: LoginIndex,
-      name:'user-account-login-index',
+      name: 'user-account-login-index',
     },
     {
       path: '/user/account/register/',
       component: RegisterIndex,
-      name:'user-account-register-index',
+      name: 'user-account-register-index',
     },
     {
       path: '/user/space/:user_id/',
       component: SpaceIndex,
-      name:'user-space-index',
+      name: 'user-space-index',
     },
     {
       path: '/user/profile/',
       component: ProfileIndex,
-      name:'user-profile-index',
+      name: 'user-profile-index',
     },
     {
       path: '/:pathMatch(.*)*',
       component: NotFoundIndex,
-      name:'not-found',
+      name: 'not-found'
     },
   ],
 })

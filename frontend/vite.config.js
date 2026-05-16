@@ -13,8 +13,8 @@ export default defineConfig({
     vueDevTools(),
     tailwindcss(),
   ],
-  build:{
-    outDir: path.resolve(__dirname, '../backend/static/frontend'),  // 打包到Django static
+  build: {
+    outDir: path.resolve(__dirname, '../backend/static/frontend'), // 打包到 Django static
     emptyOutDir: true,
   },
   resolve: {
