@@ -11,7 +11,6 @@ def photo_upload_to(instance, filename):
     return f'user/photos/{instance.user_id}_{filename}'
 
 
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     photo = models.ImageField(default='user/photos/default.png', upload_to=photo_upload_to)

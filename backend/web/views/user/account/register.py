@@ -11,7 +11,7 @@ class RegisterView(APIView):
         try:
             username = request.data['username'].strip()
             password = request.data['password'].strip()
-            if not username or password:
+            if not username or not password:
                 return Response({
                     'result': '用户名和密码不能为空'
                 })
@@ -27,9 +27,8 @@ class RegisterView(APIView):
                 'access': str(refresh.access_token),
                 'user_id': user.id,
                 'username': user.username,
-                'photo': user_profile.photo.url,  # 必须加url !!!
+                'photo': user_profile.photo.url,  # 必须加url！！！
                 'profile': user_profile.profile,
-
             })
             response.set_cookie(
                 key='refresh_token',
