@@ -1,4 +1,4 @@
-from pprint import pprint
+
 
 from django.utils.timezone import now
 from langchain_core.messages import SystemMessage, HumanMessage
@@ -36,10 +36,8 @@ def update_memory(friend):
         ]
     }
 
-    pprint(inputs)
     res = app.invoke(inputs)
     friend.memory = res['messages'][-1].content
-    pprint(friend.memory)
 
     friend.update_time = now()
     friend.save()
