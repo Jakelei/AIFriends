@@ -10,7 +10,7 @@ const isSpeaking = ref(false)
 let vadInstance = null;
 
 const startRecording = async () => {
-  const baseUrl = "http://localhost:5173/vad/";
+  const baseUrl = "http://127.0.0.1:8000/static/frontend/vad/";
   try {
     vadInstance = await MicVAD.new({
       baseAssetPath: baseUrl,
@@ -35,7 +35,7 @@ const startRecording = async () => {
 
     await vadInstance.start();
   } catch (e) {
-    console.error("VAD 初始化失败:", e);
+
   }
 };
 // 将 Float32 转 PCM 16-bit
@@ -60,7 +60,6 @@ const sendToBackend = async (arrayBuffer) => {
       emit('send', null, data.text)
     }
   } catch (err) {
-    console.error(err)
   }
 };
 
