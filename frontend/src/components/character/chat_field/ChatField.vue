@@ -43,13 +43,18 @@ function handleAddToLastMessage(delta) {
 function handlePushFrontMessage(msg) {
   history.value.unshift(msg)
 }
+
+function handleClose() {
+  inputRef.value.close()
+}
+
 defineExpose({
   showModal,
 })
 </script>
 
 <template>
-  <dialog ref="modal-ref" class="modal">
+  <dialog ref="modal-ref" class="modal" @close="handleClose">
     <div class="modal-box w-90 h-150" :style="modalStyle">
       <button @click="modalRef.close()" class="btn btn-sm btn-circle btn-ghost bg-transparent absolute right-1 top-1">✕</button>
       <ChatHistory
